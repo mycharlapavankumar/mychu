@@ -1,0 +1,31 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="text-info"><b>Faculty Registeration</b></h1>
+            </div>
+            <div class="card-body">
+                <form class="text-danger" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" name="submit" class="text-danger btn btn-info">
+
+                </form>
+
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+{% endblock %}

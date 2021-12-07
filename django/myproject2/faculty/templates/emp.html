@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="update">
+</form>
+
+
+{% endblock %}

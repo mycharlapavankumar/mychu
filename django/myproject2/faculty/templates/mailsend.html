@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+    <div class="card col-md-8 mt-5 mx-auto">
+    {% if messages %}
+    {% for i in messages %}
+    <div class="alert alert-{{i.tags}} text-center alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+
+        {{i}}
+    </div>
+    {% endfor %}
+    {% endif %}
+        <div class="card-header">
+            <h2>Mail sending</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="email" placeholder="enter mail ID" class="form-control" >
+                <input type="text" name="sub" placeholder="subject" class="form-control" >
+                <input type="text"  name="me" placeholder="enter message" class="form-control" >
+
+                <input type="submit" class="btn btn-info" value="send">
+            </form>
+            
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

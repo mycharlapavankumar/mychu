@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+
+    {% block body %}
+
+        <h1 class="text-center text-primary">student registration form</h1>
+        {% if reg %}
+                    
+            <div class="alert alert-success">
+                    <strong>Success!</strong> the registration success  </div>
+        {% endif %}
+        <form action="{% url 'student_reg' %}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-3"></div> 
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label for="s_name"><b>full Name</b></label>
+                        <input type="text" name="s_name" placeholder="enter your name" class="form-control">
+                        <label for="s_age"><b>Age</b></label>
+                        <input type="number" name="s_age" placeholder="age" class="form-control">
+                    
+                        <label for="s_phone"><b>mobile number</b></label>
+                        <input type="number" name="s_phone" placeholder="mobile number" maxlength="10" class="form-control">
+                    
+                        <label for="s_email"><b>Email</b></label>
+                        <input type="email" name="s_email" placeholder="email" class="form-control">
+                  
+                        <b><p>select your gender</p></b>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male"><b>male</b></label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female"><b>female</b></label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other"><b>other</b></label><br>
+
+                   
+                        <label for="s_roll"><b>roll number</b></label><br>
+                        <input type="text" name="s_roll" placeholder="roll number" class="form-control">
+                   
+                        <label for="s_add"><b>address</b></label>
+                        <textarea id="s_add" name="s_add" rows="5" cols="60" class="form-control" placeholder="address"></textarea>
+                        <label for="s_uname"><b>user name</b></label>
+                        <input type="text" name="s_uname" placeholder="user name" class="form-control">
+                        <label for="s_pass"><b>password</b></label>
+                        <input type="password" name="s_pass" placeholder="password" class="form-control">
+                        
+
+                    </div>
+                    <input type="submit" name="submit"  >
+                    
+                    {% if reg %}
+                    
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> the registration success  </div>
+                    {% endif %}
+                   
+                </div>
+            </div>
+
+
+        </form>
+        {% endblock %}
+        
+   

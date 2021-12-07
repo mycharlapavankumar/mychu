@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{%  block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+    <div class="card col-md-6 border-radius">
+        <div class="card-header"><h2 class="bg-success text-light">update your details</h2></div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{data.as_p}}
+                <input type="submit" class="btn btn-danger" value="update">
+            </form>
+
+        </div>
+    </div>
+
+    </div>
+    
+</div>
+
+
+{% endblock %}
