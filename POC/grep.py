@@ -17,9 +17,10 @@ def fun_grep(path, files, string):
                 #Try to read text file
                 f = open(i, 'rt')
                 file = f.read()
+
                 #checking if string present in the file
                 if string in file:
-                    #store the path of string
+                    #store the path of file
                     files.append(i)
             except:
                 # file is binary file
